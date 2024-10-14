@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://baupuo1ofqlid"]
+
+[ext_resource type="Script" path="res://scenes/hud/hud.gd" id="1_wyi6s"]
+[ext_resource type="PackedScene" uid="uid://bp7ka03xhgikj" path="res://scenes/game_success/game_success_screen.tscn" id="2_i42j7"]
+[ext_resource type="Texture2D" uid="uid://cnn4wm72iuhg0" path="res://art/misc/pause.png" id="2_vtmor"]
+[ext_resource type="PackedScene" uid="uid://bavh12t8qyog6" path="res://scenes/game_pause/game_paused_screen.tscn" id="3_7dd6o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23xq6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ogbh"]
+font_size = 32
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_wyi6s")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 960.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_23xq6")
+
+[node name="Score" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score : 0
+"
+label_settings = SubResource("LabelSettings_6ogbh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pause" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -20.0
+offset_right = 2.0
+offset_bottom = 60.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_vtmor")
+
+[node name="GameSuccessScreen" parent="." instance=ExtResource("2_i42j7")]
+
+[node name="GamePausedScreen" parent="." instance=ExtResource("3_7dd6o")]
+
+[connection signal="pressed" from="Panel/Pause" to="." method="_on_pause_pressed"]

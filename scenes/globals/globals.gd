@@ -1,0 +1,82 @@
+extends Node
+
+var balloons = {
+	0: "res://art/balloons/red.png",
+	1: "res://art/balloons/blue.png",
+	2: "res://art/balloons/green.png",
+	3: "res://art/balloons/yellow.png",
+	4: "res://art/balloons/orange.png",
+	5: "res://art/balloons/pink.png",
+	6: "res://art/balloons/brown.png",
+	7: "res://art/balloons/grey.png",
+}
+
+var balloon_array = {
+	0:[null,null,null,null,null,null,null,null,null,null],
+	1:[null,null,null,null,null,null,null,null,null,null],
+	2:[null,null,null,null,null,null,null,null,null,null],
+	3:[null,null,null,null,null,null,null,null,null,null],
+	4:[null,null,null,null,null,null,null,null,null,null],
+	5:[null,null,null,null,null,null,null,null,null,null],
+	6:[null,null,null,null,null,null,null,null,null,null],
+	7:[null,null,null,null,null,null,null,null,null,null],
+	8:[null,null,null,null,null,null,null,null,null,null],
+	9:[null,null,null,null,null,null,null,null,null,null],
+	10:[null,null,null,null,null,null,null,null,null,null],
+	11:[null,null,null,null,null,null,null,null,null,null],
+	12:[null,null,null,null,null,null,null,null,null,null],
+	13:[null,null,null,null,null,null,null,null,null,null],
+	14:[null,null,null,null,null,null,null,null,null,null],
+	15:[null,null,null,null,null,null,null,null,null,null],
+	16:[null,null,null,null,null,null,null,null,null,null],
+	17:[null,null,null,null,null,null,null,null,null,null],
+	18:[null,null,null,null,null,null,null,null,null,null],
+	19:[null,null,null,null,null,null,null,null,null,null],
+}
+
+
+var balloon_array_reset = {
+	0:[null,null,null,null,null,null,null,null,null,null],
+	1:[null,null,null,null,null,null,null,null,null,null],
+	2:[null,null,null,null,null,null,null,null,null,null],
+	3:[null,null,null,null,null,null,null,null,null,null],
+	4:[null,null,null,null,null,null,null,null,null,null],
+	5:[null,null,null,null,null,null,null,null,null,null],
+	6:[null,null,null,null,null,null,null,null,null,null],
+	7:[null,null,null,null,null,null,null,null,null,null],
+	8:[null,null,null,null,null,null,null,null,null,null],
+	9:[null,null,null,null,null,null,null,null,null,null],
+	10:[null,null,null,null,null,null,null,null,null,null],
+	11:[null,null,null,null,null,null,null,null,null,null],
+	12:[null,null,null,null,null,null,null,null,null,null],
+	13:[null,null,null,null,null,null,null,null,null,null],
+	14:[null,null,null,null,null,null,null,null,null,null],
+	15:[null,null,null,null,null,null,null,null,null,null],
+	16:[null,null,null,null,null,null,null,null,null,null],
+	17:[null,null,null,null,null,null,null,null,null,null],
+	18:[null,null,null,null,null,null,null,null,null,null],
+	19:[null,null,null,null,null,null,null,null,null,null],
+}
+
+var coordinates = {
+					0:[0,0,0,0,0,0,0,0,0,0],
+					1:[0,0,0,0,0,0,0,0,0,0],
+					2:[0,0,0,0,0,0,0,0,0,0],
+					3:[0,0,0,0,0,0,0,0,0,0],
+					4:[0,0,0,0,0,0,0,0,0,0],
+					5:[0,0,0,0,0,0,0,0,0,0],
+					6:[0,0,0,0,0,0,0,0,0,0],
+					7:[0,0,0,0,0,0,0,0,0,0],
+					8:[0,0,0,0,0,0,0,0,0,0],
+					9:[0,0,0,0,0,0,0,0,0,0],
+					10:[0,0,0,0,0,0,0,0,0,0],
+					11:[0,0,0,0,0,0,0,0,0,0],
+					12:[0,0,0,0,0,0,0,0,0,0],
+					13:[0,0,0,0,0,0,0,0,0,0],
+					14:[0,0,0,0,0,0,0,0,0,0],
+					15:[0,0,0,0,0,0,0,0,0,0],
+					16:[0,0,0,0,0,0,0,0,0,0],
+					17:[0,0,0,0,0,0,0,0,0,0],
+					18:[0,0,0,0,0,0,0,0,0,0],
+					19:[0,0,0,0,0,0,0,0,0,0]
+}

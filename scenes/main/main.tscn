@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://n4x7lolrpqlm"]
+
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_d1n2h"]
+[ext_resource type="PackedScene" uid="uid://baupuo1ofqlid" path="res://scenes/hud/hud.tscn" id="2_qkchh"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ju1au"]
+b = Vector2(0, 540)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0w8px"]
+a = Vector2(0, 540)
+b = Vector2(960, 540)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_aa871"]
+a = Vector2(960, 0)
+b = Vector2(960, 540)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_d1n2h")
+
+[node name="HUD" parent="." instance=ExtResource("2_qkchh")]
+
+[node name="BalloonContainer" type="Node2D" parent="."]
+
+[node name="ScoreContainer" type="Node2D" parent="."]
+
+[node name="Wall" type="Node2D" parent="."]
+
+[node name="Left" type="StaticBody2D" parent="Wall"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/Left"]
+shape = SubResource("SegmentShape2D_ju1au")
+
+[node name="Down" type="StaticBody2D" parent="Wall"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/Down"]
+shape = SubResource("SegmentShape2D_0w8px")
+
+[node name="Right" type="StaticBody2D" parent="Wall"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/Right"]
+shape = SubResource("SegmentShape2D_aa871")
